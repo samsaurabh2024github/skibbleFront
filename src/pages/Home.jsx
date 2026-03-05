@@ -138,7 +138,7 @@ function Home() {
           </button>
         </div>
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-8">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 px-7">
 
           {/* About */}
           <div className="p-6 rounded-xl shadow-xl bg-blue-900 bg-opacity-40">
