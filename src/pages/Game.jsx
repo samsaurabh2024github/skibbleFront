@@ -361,7 +361,9 @@ const [players, setPlayers] = useState([]);
   };
 }, []);
 
-  const isDrawer = socket.id === drawerId;
+  // const isDrawer = socket.id === drawerId;
+
+  const isDrawer = drawerId !== null && socket.id === drawerId;
 
 
   const chooseWord = (word)=>{
@@ -499,13 +501,27 @@ const [players, setPlayers] = useState([]);
         ⏱ {timeLeft}s
       </div>
 
-      {isDrawer ? (
+      {/* {isDrawer ? (
         <div className="text-green-400 mb-4 text-center">
           You are drawing
         </div>
       ) : (
         <div className="text-yellow-400 mb-4 text-center">
           Guess the word
+        </div>
+      )} */}
+
+      {drawerId === null ? (
+        <div className="text-xl text-blue-400 animate-pulse mb-4">
+          Waiting for drawer to pick a word...
+        </div>
+      ) : isDrawer ? (
+        <div className="text-green-400 mb-4 text-center font-bold">
+          You are drawing! Pick a word below.
+        </div>
+      ) : (
+        <div className="text-yellow-400 mb-4 text-center">
+          Guess the word!
         </div>
       )}
 
